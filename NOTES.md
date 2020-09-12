@@ -159,6 +159,92 @@ Best practices are:
 1. Use spaces instead of tabs (Or have the IDE convert tabs to spaces)
 2. Use 4 spaces for each indention level
 
+## Strings
+
+Strings are sequences of characters.
+
+Individual characters within a string can be accessed by their index
+
+```python
+name = "Marcus"
+print(name[0]) # prints M
+```
+
+Substrings can be accessed using a range of indices with `:`
+
+```python
+name = "Marcus"
+print(name[0:3]) # prints Mar
+print(name[0:]) # prints Marcus
+print(name[3:]) # prints cus
+```
+
+String Methods
+
+`rstrip()` will remove trailing (right) whitespace
+
+```python
+fname = "Marcus    "
+lname = "Butler"
+print(fname.rstrip(), lname) # prints Marcus Butler
+```
+
+`lstrip()` will remove leading (left) whitespace
+
+```python
+fname = "Marcus"
+lname = "       Butler"
+print(fname, lname.lstrip()) # prints Marcus Butler
+```
+
+`strip()` will remove both leading and trailing whitespace
+
+```python
+fname = "  Marcus      "
+lname = "       Butler     "
+print(fname.strip(), lname.strip()) # prints Marcus Butler
+```
+
+`upper())` will convert characters to upper case
+
+```python
+fname = "marcus"
+print(fname.upper()) # prints MARCUS
+```
+
+`lower())` will convert characters to lower case
+
+```python
+fname = "MARCUS"
+print(fname.lower()) # prints marcus
+```
+
+`replace(old, new))` will replace old character(s) with new character(s)
+
+```python
+name = "marcus_butler"
+print(name.replace('_', ' ')) # prints marcus butler
+```
+
+Values can be converted to string using the `str()` function.
+
+```python
+num = 42
+print(str(num)) # prints '42'
+```
+
+f-strings - A string with formatted expression substitution.
+
+```python
+symbol = 'IBM'
+shares = 100
+price = 91.1
+
+fmt_str = f"{symbol:>10s} {shares:10d} {price:10.2f}"
+
+print(fmt_str) # prints        IBM        100      91.10
+```
+
 ## Conditionals
 
 The `if` keywords is used to execute a conditional.
