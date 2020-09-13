@@ -245,6 +245,71 @@ fmt_str = f"{symbol:>10s} {shares:10d} {price:10.2f}"
 print(fmt_str) # prints        IBM        100      91.10
 ```
 
+## Tuples
+
+A tuple is a collection of values.
+They are typically used to represent a simple record or structure.
+Generally they are a single object containing multiples parts of data.
+
+The contents of a tuples are ordered and can be accessed like an array.
+
+```python
+data = ('FDX', 100, 232.79)
+print(data[0])  # prints FDX
+```
+
+The parenthesis are optional, but encouraged
+
+```python
+data = 'FDX', 100, 232.79
+```
+
+Tuples are immutable, meaning that their contents cannot be modified once created.
+
+```python
+data = 'FDX', 100, 232.79
+data[2] = 500
+```
+
+```console
+Traceback (most recent call last):
+ File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```
+
+Tuples can be unpacked into multiple variables in one line.
+
+```python
+data = 'FDX', 100, 232.79
+symbol, shares, price = data
+
+print(shares) # prints 100
+```
+
+## Dictionaries
+
+A dictionary is a mapping of keys to values. In other programming languages, they are called hash tables or associative arrays. The key serves as indices for accessing values.
+
+```python
+stock = {
+    'symbol': 'FDX',
+    'shares': 100,
+    'price': 232.79
+}
+
+print(stock['price']) # prints 232.79
+```
+
+To add or modify values, assign them using the key name.
+
+````python
+stock = {}
+stock['symbol'] = 'FDX'
+stock['shares'] = 100
+stock['price'] = 232.79
+```
+
+
 ## Conditionals
 
 The `if` keywords is used to execute a conditional.
@@ -255,7 +320,7 @@ if 4 > 3:
     print("Made it here!")
 else:
     print("If you see this, something very wrong has happened :(")
-```
+````
 
 Multiple conditions can be evaluated by using the `elif` keyword
 
