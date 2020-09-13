@@ -3,6 +3,7 @@
 # Exercise 1.27
 
 import csv
+import sys
 
 
 def portfolio_cost(filename):
@@ -21,6 +22,10 @@ def portfolio_cost(filename):
     return sum
 
 
-cost = portfolio_cost("Work/Data/missing.csv")
-
-print(f"Total cost {cost}")
+if len(sys.argv) == 2:
+    filename = sys.argv[1]
+    cost = portfolio_cost(filename)
+    print(f"Total cost {cost}")
+else:
+    print("Provide filename")
+    sys.exit(1)
