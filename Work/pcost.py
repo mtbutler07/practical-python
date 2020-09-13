@@ -2,20 +2,21 @@
 #
 # Exercise 1.27
 
+import csv
+
 
 def portfolio_cost(filename):
 
-    sum = 0
     with open(filename, mode="r") as f:
-        next(f)
-        for line in f:
-            line = line.strip()
-            line = line.replace('"', "")
-            line = line.split(",")
+
+        rows = csv.reader(f)
+        next(rows)
+        sum = 0
+        for row in rows:
             try:
-                sum += int(line[1]) * float(line[2])
+                sum += int(row[1]) * float(row[2])
             except ValueError:
-                print(f"Found missing fields - {line}")
+                print(f"Found missing fields - {row}")
                 continue
     return sum
 
