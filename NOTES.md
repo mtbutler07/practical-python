@@ -281,3 +281,32 @@ while index < stop:
     index += 1
     print(index)
 ```
+
+# File IO
+
+Opening and reading a text file
+
+```python
+f = open('filename.txt', mode='r')
+data = f.read()
+f.close()
+print(data)
+```
+
+Opening and writing to a text file
+
+```python
+f = open('filename.txt', mode='w')
+f.write('Hello World!')
+f.close()
+```
+
+Using a context manager to open and close the file.
+The file is opened as soon as control enters the indented code block and
+closed upon leaving.
+
+```python
+with open('filename.txt', mode='r') as f:
+    data = f.read()
+print(data)
+```
