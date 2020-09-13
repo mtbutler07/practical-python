@@ -302,13 +302,43 @@ print(stock['price']) # prints 232.79
 
 To add or modify values, assign them using the key name.
 
-````python
+```python
 stock = {}
 stock['symbol'] = 'FDX'
 stock['shares'] = 100
 stock['price'] = 232.79
 ```
 
+## Sets
+
+Sets are collections of unordered unique items.
+
+```python
+# Defining a set
+stonks = {'FDX', 'AAPL', 'MSFT'}
+
+# Alternative syntax
+stonks = set(['FDX', 'AAPL', 'MSFT'])
+```
+
+Sets are useful for eliminating duplicate elements
+
+```python
+
+stonks = ['FDX', 'AAPL', 'MSFT', 'AAPL']
+
+unique = set(stonks)
+
+print(unique) # prints {'MSFT', 'AAPL', 'FDX'}
+```
+
+Set Operations
+
+```text
+s1 | s2                 # Set union
+s1 & s2                 # Set intersection
+s1 - s2                 # Set difference
+```
 
 ## Conditionals
 
@@ -320,7 +350,7 @@ if 4 > 3:
     print("Made it here!")
 else:
     print("If you see this, something very wrong has happened :(")
-````
+```
 
 Multiple conditions can be evaluated by using the `elif` keyword
 
