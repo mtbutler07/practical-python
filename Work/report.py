@@ -13,7 +13,7 @@ def read_portfolio(filename: str) -> list:
         portfolio = []
         for row in rows:
             try:
-                holding = (row[0], int(row[1]), float(row[2]))
+                holding = dict(symbol=row[0], shares=int(row[1]), price=float(row[2]))
                 portfolio.append(holding)
             except ValueError:
                 print(f"Found missing fields - {row}")
@@ -25,8 +25,8 @@ if len(sys.argv) == 2:
     filename = sys.argv[1]
     portfolio = read_portfolio(filename)
     total = 0
-    for symbol, shares, price in portfolio:
-        total += shares * price
+    for holding in portfolio:
+        total += holding.get("shares") * holding.get("price")
     print(f"Total cost {total}")
 else:
     print("Provide filename")
