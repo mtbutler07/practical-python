@@ -245,6 +245,17 @@ fmt_str = f"{symbol:>10s} {shares:10d} {price:10.2f}"
 print(fmt_str) # prints        IBM        100      91.10
 ```
 
+Format Modifiers
+
+```text
+:>10d   Integer right aligned in 10-character field
+:<10d   Integer left aligned in 10-character field
+:^10d   Integer centered in 10-character field
+:0.2f   Float with 2 digit precision
+```
+
+Full documentation for codes is [available here](https://docs.python.org/3/library/string.html#format-specification-mini-language).
+
 ## Tuples
 
 A tuple is a collection of values.
